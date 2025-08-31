@@ -263,6 +263,7 @@ public class adoptimGUI extends javax.swing.JFrame {
         getContentPane().add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 730, 160, -1));
 
         menu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/back.png"))); // NOI18N
         menu1.setText("Ktheu");
         menu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,6 +301,7 @@ public class adoptimGUI extends javax.swing.JFrame {
         jMenuBar.add(menu1);
 
         addMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/plus.png"))); // NOI18N
         addMenu.setText("Regjistro/Shto");
 
         strehezaShto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/roof.png"))); // NOI18N
@@ -557,21 +559,21 @@ public class adoptimGUI extends javax.swing.JFrame {
             }
 
             if (status == null || status.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni një status!", "Gabim", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje status!", "Gabim", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
             if (shelterId == null || shelterId <= 0) {
-                JOptionPane.showMessageDialog(this, "ID e strehës është e pavlefshme!", "Gabim", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "ID e strehes eshte e pavlefshme!", "Gabim", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
             if (animalId == null || animalId <= 0) {
-                JOptionPane.showMessageDialog(this, "ID e kafshës është e pavlefshme!", "Gabim", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "ID e kafshes eshte e pavlefshme!", "Gabim", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             if (date == null) {
-                JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni një datë!", "Gabim", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje date!", "Gabim", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
@@ -620,7 +622,7 @@ public class adoptimGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_saveBtnActionPerformed
-/*
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -631,7 +633,7 @@ public class adoptimGUI extends javax.swing.JFrame {
         });
 
     }
-*/
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Disponueshmeria;
     private javax.swing.JButton Fshi;
@@ -688,7 +690,6 @@ public class adoptimGUI extends javax.swing.JFrame {
 
         String sql;
         if (selected == null || selected.equals("--") || !selected.matches("\\d+")) {
-            // No valid ID selected → show all applications
             sql = "SELECT k.ka_ID, k.kerkuesi, k.dataKerkeses, s.emer"
                     + (hasAppStatus ? ", k.status" : "")
                     + " FROM kerkesatadoptim k LEFT JOIN strehezaperkohshme s ON k.streha_ID = s.streha_ID "
