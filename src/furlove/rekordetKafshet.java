@@ -725,7 +725,7 @@ public class rekordetKafshet extends javax.swing.JFrame {
     private void pastroTblBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pastroTblBtnActionPerformed
         PastroTable();
     }//GEN-LAST:event_pastroTblBtnActionPerformed
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -734,7 +734,7 @@ public class rekordetKafshet extends javax.swing.JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel;
     private javax.swing.JLabel IDLabel1;

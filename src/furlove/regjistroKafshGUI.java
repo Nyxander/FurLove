@@ -428,7 +428,7 @@ public class regjistroKafshGUI extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_specieMenuActionPerformed
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -437,7 +437,7 @@ public class regjistroKafshGUI extends javax.swing.JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Pastro;
     private javax.swing.JLabel emriLabel;

@@ -620,7 +620,7 @@ public class adoptimGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_saveBtnActionPerformed
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -631,7 +631,7 @@ public class adoptimGUI extends javax.swing.JFrame {
         });
 
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Disponueshmeria;
     private javax.swing.JButton Fshi;

@@ -321,7 +321,7 @@ public class galeriaGUI extends javax.swing.JFrame {
         });
         dispose();
     }//GEN-LAST:event_galeriMenuActionPerformed
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -330,7 +330,7 @@ public class galeriaGUI extends javax.swing.JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel foto;
     private javax.swing.JButton fotoBtn;

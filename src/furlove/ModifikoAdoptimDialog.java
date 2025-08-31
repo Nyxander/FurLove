@@ -44,7 +44,7 @@ public class ModifikoAdoptimDialog extends JDialog {
         JLabel titleLabel = new JLabel("Edito Aplikimin e Adoptimit");
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
         titleLabel.setFont(new Font("Imprint MT Shadow", Font.BOLD, 18));
-        
+
         add(titleLabel, BorderLayout.NORTH);
 
         int row = 0;
@@ -160,19 +160,16 @@ public class ModifikoAdoptimDialog extends JDialog {
                         emailField.setText(rs.getString("email"));
                         noteArea.setText(rs.getString("shenim"));
 
-                        // Set status
                         String status = rs.getString("status");
                         if (status != null) {
                             statusCombo.setSelectedItem(status);
                         }
 
-                        // Set shelter
                         String shelter = rs.getString("adresa");
                         if (shelter != null) {
                             shelterCombo.setSelectedItem(shelter);
                         }
 
-                        // Set animal
                         int animalId = rs.getInt("kafsha_ID");
                         if (animalId > 0) {
                             String animalName = getAnimalDisplayName(animalId);
@@ -181,7 +178,6 @@ public class ModifikoAdoptimDialog extends JDialog {
                             }
                         }
 
-                        // Set date
                         Date date = rs.getDate("dataKerkeses");
                         if (date != null) {
                             dateField.setText(date.toString());
@@ -211,8 +207,6 @@ public class ModifikoAdoptimDialog extends JDialog {
         }
         return null;
     }
-
-
 
     public boolean isOkPressed() {
         return okPressed;
@@ -313,58 +307,58 @@ public class ModifikoAdoptimDialog extends JDialog {
         }
     }
 
-private boolean validateForm() {
-    String applicant = applicantField.getText().trim();
-    if (applicant.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Ju lutem shkruani emrin e kerkuesit.", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
-
-    String phone = phoneField.getText().trim();
-    if (!phone.isEmpty() && !phone.matches("\\d{10}")) {
-        JOptionPane.showMessageDialog(this, "Numri i telefonit duhet te permbaje vetem numra (10 shifra).", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
-
-    String email = emailField.getText().trim();
-    if (!email.isEmpty() && !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
-        JOptionPane.showMessageDialog(this, "Email-i nuk eshte ne format te vlefshem.", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
-
-    if (statusCombo.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje status.", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
-
-    if (shelterCombo.getSelectedItem() == null || shelterCombo.getSelectedItem().equals("--")) {
-        JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje strehe.", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
-
-    if (animalCombo.getSelectedItem() == null || animalCombo.getSelectedItem().equals("--")) {
-        JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje kafshe.", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
-
-    String dateStr = dateField.getText().trim();
-    if (!dateStr.isEmpty()) {
-        if (!dateStr.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
-            JOptionPane.showMessageDialog(this, "Data duhet t jete ne formatin YYYY-MM-DD.", "Gabim", JOptionPane.ERROR_MESSAGE);
+    private boolean validateForm() {
+        String applicant = applicantField.getText().trim();
+        if (applicant.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ju lutem shkruani emrin e kerkuesit.", "Gabim", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        try {
-            java.sql.Date.valueOf(dateStr); 
-        } catch (IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(this, "Data e dhene nuk eshte e vlefshme.", "Gabim", JOptionPane.ERROR_MESSAGE);
+
+        String phone = phoneField.getText().trim();
+        if (!phone.isEmpty() && !phone.matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(this, "Numri i telefonit duhet te permbaje vetem numra (10 shifra).", "Gabim", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "Ju lutem shkruani daten e kerkeses.", "Gabim", JOptionPane.ERROR_MESSAGE);
-        return false;
-    }
 
-    return true; 
-}
+        String email = emailField.getText().trim();
+        if (!email.isEmpty() && !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            JOptionPane.showMessageDialog(this, "Email-i nuk eshte ne format te vlefshem.", "Gabim", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        if (statusCombo.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje status.", "Gabim", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        if (shelterCombo.getSelectedItem() == null || shelterCombo.getSelectedItem().equals("--")) {
+            JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje strehe.", "Gabim", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        if (animalCombo.getSelectedItem() == null || animalCombo.getSelectedItem().equals("--")) {
+            JOptionPane.showMessageDialog(this, "Ju lutem zgjidhni nje kafshe.", "Gabim", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        String dateStr = dateField.getText().trim();
+        if (!dateStr.isEmpty()) {
+            if (!dateStr.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+                JOptionPane.showMessageDialog(this, "Data duhet t jete ne formatin YYYY-MM-DD.", "Gabim", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            try {
+                java.sql.Date.valueOf(dateStr);
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(this, "Data e dhene nuk eshte e vlefshme.", "Gabim", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Ju lutem shkruani daten e kerkeses.", "Gabim", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        return true;
+    }
 
 }

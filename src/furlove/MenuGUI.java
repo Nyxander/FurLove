@@ -290,7 +290,7 @@ public class MenuGUI extends javax.swing.JFrame {
         new galeriaGUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_galeriaBtnActionPerformed
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -299,7 +299,7 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adoptimBtn;
     private javax.swing.JLabel bg;

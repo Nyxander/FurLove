@@ -636,7 +636,7 @@ public class rekordetVeterinereve extends javax.swing.JFrame {
         dialogJ.setLocationRelativeTo(null);
         dialogJ.setVisible(true);
     }//GEN-LAST:event_shtoMjeketButonActionPerformed
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -645,7 +645,7 @@ public class rekordetVeterinereve extends javax.swing.JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel;
     private javax.swing.JLabel IDLabel1;

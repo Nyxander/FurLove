@@ -153,7 +153,7 @@ public class LoginGUI extends JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_loginButonActionPerformed
-
+/*
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -161,7 +161,7 @@ public class LoginGUI extends JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aLabel;
     private javax.swing.JLabel background2;

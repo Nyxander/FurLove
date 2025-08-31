@@ -323,7 +323,7 @@ public class adoptimetGUI extends javax.swing.JFrame {
         KontrataAdoptimiDialog dialog = new KontrataAdoptimiDialog(this, con, appId);
         dialog.setVisible(true);
     }
-
+/*
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -332,7 +332,7 @@ public class adoptimetGUI extends javax.swing.JFrame {
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu addMenu;
     private javax.swing.JMenuItem adoptimeRekord;
