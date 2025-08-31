@@ -399,7 +399,7 @@ public class rekordetKafshet extends javax.swing.JFrame {
                 speciaTxt.setSelectedItem((rs.getString(3)));
                 gjiniaS.setSelectedItem(rs.getString(4));
                 vfTxt.setText(rs.getString(7));
-                komenteTxt.setText(rs.getString(9));
+                komenteTxt.setText(rs.getString(8));
                 k_status.setSelectedItem(rs.getString(6));
                 gjendjaShText.setText(rs.getString(5));
             }
