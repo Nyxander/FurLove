@@ -117,10 +117,10 @@ public class ModifikoAdoptimDialog extends JDialog {
             shelterCombo.removeAllItems();
             shelterCombo.addItem("--");
 
-            String sql = "SELECT streha_ID, adresa FROM strehezaperkohshme ORDER BY adresa";
+            String sql = "SELECT streha_ID, emer FROM strehezaperkohshme ORDER BY emer";
             try (PreparedStatement ps = con.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    shelterCombo.addItem(rs.getString("adresa"));
+                    shelterCombo.addItem(rs.getString("emer"));
                 }
             }
         } catch (SQLException e) {
