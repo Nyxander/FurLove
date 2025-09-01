@@ -712,7 +712,6 @@ public class adoptimGUI extends javax.swing.JFrame {
             }
 
         } else {
-            // Valid numeric ID → filter by kafsha_ID
             sql = "SELECT k.ka_ID, k.kerkuesi, k.dataKerkeses, s.emer"
                     + (hasAppStatus ? ", k.status" : "")
                     + " FROM kerkesatadoptim k LEFT JOIN strehezaperkohshme s ON k.streha_ID = s.streha_ID "
@@ -720,7 +719,7 @@ public class adoptimGUI extends javax.swing.JFrame {
                     + "ORDER BY k.dataKerkeses DESC, k.ka_ID DESC";
 
             try (PreparedStatement ps = con.prepareStatement(sql)) {
-                ps.setInt(1, Integer.parseInt(selected)); // safe here
+                ps.setInt(1, Integer.parseInt(selected)); 
                 try (ResultSet r = ps.executeQuery()) {
                     while (r.next()) {
                         Object status = hasAppStatus ? r.getString("status") : "-";
@@ -983,7 +982,7 @@ public class adoptimGUI extends javax.swing.JFrame {
             }
 
             try (PreparedStatement ps = con.prepareStatement(
-                    "INSERT INTO strehezaperkohshme (emri, specializimi, telefoni) VALUES (?, ?, ?)")) {
+                    "INSERT INTO strehezaperkohshme (adresa, emer, kapaciteti) VALUES (?, ?, ?)")) {
                 ps.setString(1, adresaString);
                 ps.setString(2, emriString);
                 ps.setString(3, kapacitetiString);
